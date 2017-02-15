@@ -45,14 +45,14 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yhg-Nc-8bz"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ZYx-o8-WfG">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ZYx-o8-WfG">
                                         <rect key="frame" x="0.0" y="104.5" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ZYx-o8-WfG" secondAttribute="height" multiplier="1:1" id="6bA-a1-OXD"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="ZMe-ya-Bdo" appends="YES" id="IBk-MI-pca"/>
+                                            <outletCollection property="gestureRecognizers" destination="wbn-rB-pJH" appends="YES" id="BhT-Vu-7fY"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -70,14 +70,14 @@
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="AmT-HA-fAA" id="mV4-mf-1vq"/>
-                        <outlet property="nameFieldText" destination="PKQ-aY-rcc" id="1WZ-aJ-IZI"/>
+                        <outlet property="nameTextField" destination="PKQ-aY-rcc" id="aJt-4X-jD8"/>
                         <outlet property="photoImageView" destination="ZYx-o8-WfG" id="uxv-ky-nNK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ZMe-ya-Bdo">
+                <tapGestureRecognizer id="wbn-rB-pJH">
                     <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="R9f-md-o8J"/>
+                        <action selector="selectPhotoFromLibrary:" destination="BYZ-38-t0r" id="rL9-UC-1c8"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -85,6 +85,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="defaultPhoto" width="1024" height="646"/>
+        <image name="defaultPhoto" width="540" height="540"/>
     </resources>
 </document>
