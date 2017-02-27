@@ -21,20 +21,28 @@ class RatingControl: UIStackView {
         setupButtons()
     }
     
+    
+    //MARK: Actions
+    func ratingButtonTapped(button: UIButton) {
+        print("Button Pressed!!!")
+    }
+    
     //MARK: Private Mehtods
     private func setupButtons(){
         
-    //create button
-    let button = UIButton()
-    button.backgroundColor = UIColor.red
+        //create button
+        let button = UIButton()
+        button.backgroundColor = UIColor.red
         
-    //add constraints
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-    button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
-    
-    
-    //add buttons to the stack
-    addArrangedSubview(button)
+        //add constraints
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+        
+        //setup button acton
+        button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
+        
+        //add buttons to the stack
+        addArrangedSubview(button)
     }
 }
