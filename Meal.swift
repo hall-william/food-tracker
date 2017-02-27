@@ -17,7 +17,7 @@ class Meal{
     //MARK: Initialization
     init?(name: String, photo: UIImage?, rating: Int){
         //Initialization should fail if no name or rating is negative
-        if(name.isEmpty || rating < 0){
+        if(name.isEmpty || rating < 0 || rating > 5){
             return nil
         }
         
