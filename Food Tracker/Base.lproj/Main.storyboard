@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="448" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Kb-tz-86A">
-                                <rect key="frame" x="16" y="40" width="343" height="513"/>
+                                <rect key="frame" x="16" y="40" width="343" height="512.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmT-HA-fAA">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -55,7 +55,7 @@
                                             <outletCollection property="gestureRecognizers" destination="wbn-rB-pJH" appends="YES" id="BhT-Vu-7fY"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="57" translatesAutoresizingMaskIntoConstraints="NO" id="NbA-kA-tOI" customClass="RatingControl" customModule="Food_Tracker" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="57" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NbA-kA-tOI" customClass="RatingControl" customModule="Food_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="455.5" width="200" height="57"/>
                                     </stackView>
                                 </subviews>
