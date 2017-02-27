@@ -120,6 +120,8 @@ import UIKit
             let hintString: String?
             if rating == index + 1 {
                 hintString = "Tap to reset the rating to zero."
+            } else {
+                hintString = nil
             }
             
             //Calculate the value string
