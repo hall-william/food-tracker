@@ -1,5 +1,5 @@
 //
-//  MealCollectionViewController.swift
+//  MealTableViewController.swift
 //  Food Tracker
 //
 //  Created by William Hall on 3/1/17.
@@ -8,14 +8,25 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+
 
 class MealTableViewController: UITableViewController {
 
+    
     //MARK: Properties
     var meals = [Meal]()
+    private let reuseIdentifier = "Cell"
     
-    
+    //Mark: Actions
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.source as?
+            MealViewController, let meal = sourceViewController.meal {
+            //add a new meal
+            let newIndexPath = IndexPath(row: meals.count, section: 0)
+            meals.append(meal)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
     
     //MARK: Private Methods
     private func loadSampleMeals(){

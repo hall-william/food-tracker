@@ -16,7 +16,7 @@
 		48A920711E6497DE00C60660 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A920701E6497DE00C60660 /* Meal.swift */; };
 		48F2FE2A1E6722C200F4338B /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2FE291E6722C200F4338B /* MealTableViewCell.swift */; };
 		48F2FE2C1E672E5800F4338B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F2FE2B1E672E5800F4338B /* Assets.xcassets */; };
-		48F2FE2E1E6730C900F4338B /* MealCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2FE2D1E6730C900F4338B /* MealCollectionViewController.swift */; };
+		48F2FE2E1E6730C900F4338B /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F2FE2D1E6730C900F4338B /* MealTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		48A920701E6497DE00C60660 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Meal.swift; path = ../Meal.swift; sourceTree = "<group>"; };
 		48F2FE291E6722C200F4338B /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		48F2FE2B1E672E5800F4338B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
-		48F2FE2D1E6730C900F4338B /* MealCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCollectionViewController.swift; sourceTree = "<group>"; };
+		48F2FE2D1E6730C900F4338B /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 				48A920701E6497DE00C60660 /* Meal.swift */,
 				482981891E46BCA600ED95A6 /* AppDelegate.swift */,
 				4829818B1E46BCA600ED95A6 /* MealViewController.swift */,
-				48F2FE2D1E6730C900F4338B /* MealCollectionViewController.swift */,
+				48F2FE2D1E6730C900F4338B /* MealTableViewController.swift */,
 				48F2FE291E6722C200F4338B /* MealTableViewCell.swift */,
 				4829818D1E46BCA600ED95A6 /* Main.storyboard */,
 				482981921E46BCA600ED95A6 /* LaunchScreen.storyboard */,
@@ -213,7 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48A920711E6497DE00C60660 /* Meal.swift in Sources */,
-				48F2FE2E1E6730C900F4338B /* MealCollectionViewController.swift in Sources */,
+				48F2FE2E1E6730C900F4338B /* MealTableViewController.swift in Sources */,
 				4829818C1E46BCA600ED95A6 /* MealViewController.swift in Sources */,
 				4867BCBE1E5CE3700036F8E9 /* RatingControl.swift in Sources */,
 				4829818A1E46BCA600ED95A6 /* AppDelegate.swift in Sources */,
