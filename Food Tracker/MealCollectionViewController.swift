@@ -10,10 +10,10 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class MealCollectionViewController: UICollectionViewController {
+class MealTableViewController: UITableViewController {
 
     //MARK: Properties
-    var meal = [Meal]()
+    var meals = [Meal]()
     
     
     
@@ -34,7 +34,7 @@ class MealCollectionViewController: UICollectionViewController {
             fatalError("Unable to instantiate meal3.")
         }
         
-        meal += [meal1, meal2, meal3]
+        meals += [meal1, meal2, meal3]
     }
     
     override func viewDidLoad() {
@@ -56,21 +56,27 @@ class MealCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func numberOfSections(in TableView: UITableView) -> Int {
+        return 1
     }
 
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return meals.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "MealTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+        }
+        
+        //fetches the appropriate meal
+        let meal = meals[indexPath.row]
     
-        // Configure the cell
+        cell.nameLabel.text = meal.name
+        cell.photoImageView.image = meal.photo
+        cell.ratingControl.rating = meal.rating
     
         return cell
     }

@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="260" y="118"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Meal Table View Controller-->
         <scene sceneID="CdS-Rk-gP8">
             <objects>
-                <tableViewController id="ge5-8A-F7E" sceneMemberID="viewController">
+                <tableViewController id="ge5-8A-F7E" customClass="MealTableViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="kh7-Tf-LqQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
