@@ -21,15 +21,16 @@ class MealTableViewController: UITableViewController {
     @IBAction func unwindToMealList(sender: UIStoryboardSegue){
         if let sourceViewController = sender.source as?
             MealViewController, let meal = sourceViewController.meal {
+            //update an existing meal
             if let selectedIndexPath = tableView.indexPathForSelectedRow{
-                //update an existing meal
                 meals[selectedIndexPath.row] = meal
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             } else {
-            //add a new meal
-            let newIndexPath = IndexPath(row: meals.count, section: 0)
-            meals.append(meal)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+                // Add a new meal.
+                let newIndexPath = IndexPath(row: meals.count, section: 0)
+                
+                meals.append(meal)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
         }
     }
@@ -60,41 +61,40 @@ class MealTableViewController: UITableViewController {
         // load sample data
         loadSampleMeals()
         
-
+        //Use the edit button provided by the view mealDetailViewController
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
-    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        switch(segue.identifier ?? "")
-        {
-            case "Any Idem":
-                os.log("Adding a new meal.  ", OS.log.default, type: .debug)
-            case "Show Detail":
-                guard let MealViewController = segue.destiation as? MealViewController
+        switch(segue.identifier ?? ""){
+            case "AddItem":
+                os_log("Adding a new meal.", log: OSLog.default, type: .default)
+            case "ShowDetail":
+                guard let mealDetailViewController = segue.destination as? MealViewController
                     else {
-                        fatalError("Unexpected desination: \(segue: destiation)")
-                        }
+                            fatalError("Unexpected Destination: \(sender)")
+                          }
                 guard let selectedMealCell = sender as? MealTableViewCell
                     else {
-                        fatalError("Enexpected sender: \(sender)")
-                        }
+                            fatalError("Unexpected sender: \(sender)")
+                         }
                 guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
-                        fatalError("The selected cell is not being displayed by the table")
-                        }
-                let selectedMeal = meals[indexPath.row]
-                mealDetailViewController.meal = selectedMeal
+                    fatalError("The selected cell is not being displayed by the table")
+                         }
+            let selectedMeal = meals[indexPath.row]
+            mealDetailViewController.meal = selectedMeal
             default:
                 fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
     }
-    
 
-    // MARK: UICollectionViewDataSource
+
+    // MARK: UITableViewDataSource
 
     override func numberOfSections(in TableView: UITableView) -> Int {
         return 1
@@ -121,6 +121,22 @@ class MealTableViewController: UITableViewController {
         return cell
     }
 
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            meals.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
     // MARK: UICollectionViewDelegate
 
     /*
